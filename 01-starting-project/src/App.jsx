@@ -25,7 +25,7 @@ function App() {
         </p>
       </header>
       <main>
-        <h2>Time to get started!</h2>
+        <h2>Time to get started! with React </h2>
       </main>
     </div>
   );
