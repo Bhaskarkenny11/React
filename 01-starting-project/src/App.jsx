@@ -1,4 +1,4 @@
-
+import reactImg from './assets/react-core-concepts.png'
 const reactDynamicDescription=['Fundamental','Crucial','Core'];
 
 function getRandomInt (max)
@@ -9,7 +9,7 @@ function getRandomInt (max)
 function Header() {
  const description= reactDynamicDescription[getRandomInt(2)]
   return (<header>
-    <img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
+    <img src={reactImg} alt="Stylized atom" />
     <h1>React Essentials.</h1>
     <p>
        { description} React concepts you will need for almost any app you are
