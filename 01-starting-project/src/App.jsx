@@ -33,7 +33,7 @@ function App() {
           <TabButton>Props</TabButton>
           <TabButton>State</TabButton>
           </menu>
-
+           dynamic content goes Header
         </section> 
    
       </main>
