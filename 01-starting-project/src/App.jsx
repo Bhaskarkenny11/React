@@ -5,12 +5,13 @@ import { CORE_CONCEPTS } from './data.js';
 import Header from './components/Header/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from'./components/TabButton.jsx'
+import { Component } from 'react';
 
 
 function App() {
 
-  function handleSelect(){
-    console.log("hey you clicked via onSelect");
+  function handleSelect( selectedButton){
+    console.log("hey you clicked on "+ selectedButton);
 }
 
   return (
@@ -33,10 +34,10 @@ function App() {
         <section id='examples'>
           <h2>Examples</h2>
           <menu>
-          <TabButton onSelect={handleSelect}>Components</TabButton>
-          <TabButton onSelect={handleSelect}>Jsx</TabButton>
-          <TabButton onSelect={handleSelect}>Props</TabButton>
-          <TabButton onSelect={handleSelect}>State</TabButton>
+          <TabButton onSelect={()=>handleSelect("Component")}>Components</TabButton>
+          <TabButton onSelect={()=>handleSelect("Jsx")}>Jsx</TabButton>
+          <TabButton onSelect={()=>handleSelect("Props")}>Props</TabButton>
+          <TabButton onSelect={()=>handleSelect("State")}>State</TabButton>
           </menu>
            dynamic content goes Header
         </section> 
