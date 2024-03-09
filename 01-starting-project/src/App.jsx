@@ -9,10 +9,13 @@ import { Component } from 'react';
 
 
 function App() {
-
+ let content='please click a button ';
   function handleSelect( selectedButton){
-    console.log("hey you clicked on "+ selectedButton);
+   // console.log("hey you clicked on "+ selectedButton);
+   content=selectedButton
+   console.log(content)
 }
+console.log('app componenet')
 
   return (
     <div>
@@ -39,9 +42,10 @@ function App() {
           <TabButton onSelect={()=>handleSelect("Props")}>Props</TabButton>
           <TabButton onSelect={()=>handleSelect("State")}>State</TabButton>
           </menu>
-           dynamic content goes Header
+           {content}
+      
         </section> 
-   
+        
       </main>
     </div>
   );
