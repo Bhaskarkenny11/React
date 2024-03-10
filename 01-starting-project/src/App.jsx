@@ -1,15 +1,16 @@
 import { useState} from 'react';
 
-import { CORE_CONCEPTS } from './data.js';
+import { CORE_CONCEPTS,EXAMPLES} from './data.js';
 import Header from './components/Header/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from'./components/TabButton.jsx'
 import { Component } from 'react';
 
 
+
 function App() {
 
- const [selctedTopic,setSelectedTopic]=useState('this is useState')
+ const [selctedTopic,setSelectedTopic]=useState('components')
   function handleSelect( selectedButton){
    // console.log("hey you clicked on "+ selectedButton);
    setSelectedTopic(selectedButton)
@@ -37,13 +38,16 @@ console.log('app componenet')
         <section id='examples'>
           <h2>Examples</h2>
           <menu>
-          <TabButton onSelect={()=>handleSelect("Component")}>Components</TabButton>
-          <TabButton onSelect={()=>handleSelect("Jsx")}>Jsx</TabButton>
-          <TabButton onSelect={()=>handleSelect("Props")}>Props</TabButton>
-          <TabButton onSelect={()=>handleSelect("State")}>State</TabButton>
+          <TabButton onSelect={()=>handleSelect("components")}>Components</TabButton>
+          <TabButton onSelect={()=>handleSelect("jsx")}>JSX</TabButton>
+          <TabButton onSelect={()=>handleSelect("props")}>Props</TabButton>
+          <TabButton onSelect={()=>handleSelect("state")}>State</TabButton>
           </menu>
-           {selctedTopic}
-      
+          <div id='tab-content'>
+           <h3>{EXAMPLES[selctedTopic].title}</h3>
+           <p>{EXAMPLES[selctedTopic].description} </p>
+           <code>{EXAMPLES[selctedTopic].code}</code>
+      </div>
         </section> 
         
       </main>
