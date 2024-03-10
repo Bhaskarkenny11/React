@@ -1,5 +1,4 @@
-
-
+import { useState} from 'react';
 
 import { CORE_CONCEPTS } from './data.js';
 import Header from './components/Header/Header.jsx';
@@ -9,11 +8,12 @@ import { Component } from 'react';
 
 
 function App() {
- let content='please click a button ';
+
+ const [selctedTopic,setSelectedTopic]=useState('this is useState')
   function handleSelect( selectedButton){
    // console.log("hey you clicked on "+ selectedButton);
-   content=selectedButton
-   console.log(content)
+   setSelectedTopic(selectedButton)
+  // console.log(content)
 }
 console.log('app componenet')
 
@@ -42,7 +42,7 @@ console.log('app componenet')
           <TabButton onSelect={()=>handleSelect("Props")}>Props</TabButton>
           <TabButton onSelect={()=>handleSelect("State")}>State</TabButton>
           </menu>
-           {content}
+           {selctedTopic}
       
         </section> 
         
