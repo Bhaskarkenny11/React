@@ -10,7 +10,7 @@ import { Component } from 'react';
 
 function App() {
 
- const [selctedTopic,setSelectedTopic]=useState('components')
+ const [selctedTopic,setSelectedTopic]=useState()
   function handleSelect( selectedButton){
    // console.log("hey you clicked on "+ selectedButton);
    setSelectedTopic(selectedButton)
@@ -38,16 +38,19 @@ console.log('app componenet')
         <section id='examples'>
           <h2>Examples</h2>
           <menu>
+        
           <TabButton onSelect={()=>handleSelect("components")}>Components</TabButton>
           <TabButton onSelect={()=>handleSelect("jsx")}>JSX</TabButton>
           <TabButton onSelect={()=>handleSelect("props")}>Props</TabButton>
           <TabButton onSelect={()=>handleSelect("state")}>State</TabButton>
-          </menu>
-          <div id='tab-content'>
+          </menu>        
+            {!setSelectedTopic ? (<p>please select a topic </p> ): (<div id='tab-content'>
            <h3>{EXAMPLES[selctedTopic].title}</h3>
            <p>{EXAMPLES[selctedTopic].description} </p>
            <code>{EXAMPLES[selctedTopic].code}</code>
-      </div>
+      </div> )}
+        
+         
         </section> 
         
       </main>
